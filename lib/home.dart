@@ -1,4 +1,5 @@
 import 'package:draggablelist_toy/pages/dragAndDropLists.dart';
+import 'package:draggablelist_toy/pages/draggable.dart';
 import 'package:draggablelist_toy/pages/reorderableList.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -28,12 +29,18 @@ class _HomePageState extends State<HomePage> {
               child: const Text("ReorderableListView Class"),
             ),
             ElevatedButton(
+              onPressed: () {
+                Get.to(DragAndDropListPage());
+              },
+              child: const Text("Drag and Drop List Package <Deprecated>"),
+              style: ElevatedButton.styleFrom(primary: Colors.redAccent),
+            ),
+            ElevatedButton(
                 onPressed: () {
-                  Get.to(DragAndDropListPage());
+                  Get.to(DraggablePage());
                 },
-                child: const Text("Drag and Drop List Package <Deprecated>"),
-                style: ElevatedButton.styleFrom(primary: Colors.redAccent),
-                ),
+                child: const Text("Draggable Class")
+            )
           ],
         ),
       ),
